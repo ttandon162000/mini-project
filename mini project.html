@@ -1,0 +1,161 @@
+<!doctype html>
+    
+    <html>
+        
+        <head>
+        
+        <script src="jquery.js"></script>
+            
+        
+        
+        <style>
+            
+            body
+            {
+                width:1000px;
+                font-size:130%;
+            }
+            
+            
+            
+            input
+            {
+                padding:10px 10px;
+                border:1px solid black;
+                border-radius:5px;
+                margin-left:10px;
+            }
+            
+            #wrapper
+            {
+                
+                width:500px;
+                margin:0 auto;
+            }
+            label
+            {
+                float:left;
+                margin-top:8px;
+            }
+            
+            #email
+            {
+                margin-left:115px;
+            }
+            #tele
+            {
+                margin-top:8px;
+                margin-left:79px;
+            }
+            
+            #pass
+            {
+                margin-top:5px;
+                margin-left:84px;
+            }
+            
+            #con
+            {
+                margin-right:12px;
+                margin-top:6px;
+            }
+            
+            #submission
+            {
+                margin-left:20px;
+            }
+        </style>
+            
+            
+            
+            
+            
+            
+            
+        </head>
+        
+        <body>
+            
+            <div id="wrapper">
+            
+            <label for="email">Email</label>
+            
+            <input type="text" id="email" placeholder="eg.@gmail.com">
+            <br>
+            <label for="tele">Telephone</label>
+            <input type="text" id="tele" placeholder="91..........">
+            
+             <br>
+             <label for="pass">Password</label>
+             <input type="password" id="pass">
+             
+             <br>
+             
+            <label for="con"> Confirm Password</label>
+             <input type="password" id="con">
+            
+            
+                
+             <input type="submit" id="hello">
+             
+             
+             
+            
+            
+            
+            </div>
+            
+            
+            
+            
+            <script>
+             
+             
+             function check(email)
+             {
+                var regex=/(([a-zA-Z\d+\.]+)@([a-zA-Z]+)\.([a-z]+))/;
+                
+                return(regex.test(email));
+             } 
+                 
+             
+             
+             
+             $("#hello").click(function()
+                             {
+                                 var message=" ";
+                                 var field="";
+                                if(check($("#email").val())==false)
+                                {
+                                    message=message+"invalid email addresss";
+                                
+                                
+                                }
+                                 if($.isNumeric($("#tele").val())==false)
+                                 {
+                                    message=message+"<p> Your phone no is not valid </p>"
+                                 }
+                                 if($("#con").val()!=$("#pass").val())
+                                 {
+                                    message=message+"<p> passwords dont match </p>";
+                                 }
+                                 alert(message);
+                                    
+                                
+                             });
+                                
+                
+             
+             
+             
+                
+                
+            </script>
+            
+            
+        </body>
+        
+    </html>
+    
+    
+        
